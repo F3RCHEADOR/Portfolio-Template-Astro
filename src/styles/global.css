@@ -1,0 +1,51 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+@import "tailwindcss";
+
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-main-light: #fffffe;
+  --color-button-main-light: #3da9fc;
+  --color-heading-main-light: #094067;
+  --color-paragraph-light: #5f6c7b;
+  --color-button-alt-light: #fffffe;
+  --color-border-light: #094067;
+  --color-heading-alt-light: #3da9fc;
+  --color-secundary-light: #ef4565;
+
+  --color-main-dark: #16161a;
+  --color-button-main-dark: #7f5af0;
+  --color-headingg-main-dark: #fffffe;
+  --color-paragraph-dark: #94a1b2;
+  --color-button-alt-dark: #fffffe;
+  --color-border-dark: #010101;
+  --color-heading-alt-dark: #7f5af0;
+  --color-secundary-dark: #2cb67d;
+  
+}
+
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/atkinson-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/atkinson-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "Atkinson", sans-serif;
+  margin: 0;
+  padding: 0;
+}

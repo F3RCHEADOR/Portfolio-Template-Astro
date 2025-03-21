@@ -1,0 +1,38 @@
+
+# alt + d -> complete task
+# ctrl + enter -> create task
+# alt + c -> cancel task
+# @critical ,@high ,@low ,@today  -> tags
+ 
+☐ Reducir el grosor de los bordes: Usa líneas más delgadas o incluso prueba sin bordes para un diseño más limpio. @high 
+☐ Alineación y espaciado: Asegúrate de que los elementos tengan suficiente separación para que no se vean amontonados. @low 
+☐ Optimizar los iconos: Si usas iconos, procura que tengan el mismo estilo y tamaño. @low 
+☐ Foto de perfil: Agrega una imagen profesional o un avatar estilizado. Puede ser un círculo con un borde sutil.
+☐ Nombre con jerarquía visual: Usa una tipografía más grande y destacada para tu nombre. @critical 
+☐ Breve descripción: Agrega una línea que resuma lo que haces, por ejemplo: @today 
+  "Desarrollador Frontend apasionado por la creación de experiencias digitales."
+
+✔ Tecnologías destacadas: Muestra iconos o etiquetas con tus principales stacks, como Astro, Tailwind, PHP, JavaScript. @done (2/11/2025, 5:23:32 PM)
+☐ Renombrar secciones para mayor claridad: @today 
+"Home" → "Inicio"
+"Library" → "Proyectos" o "Portafolio"
+
+☐ Agregar una sección "Sobre mí": Puede llevar a una página con más detalles sobre tu experiencia.
+☐ Darle más importancia al contacto: Usa un botón con un color llamativo en vez de un simple enlace.
+☐ Botones visibles con iconos para LinkedIn, GitHub y Twitter (o X).
+☐ Formulario de contacto embebido en vez de solo un enlace de correo.
+✔ Modo oscuro y claro: Ya tienes un botón de tema, pero podrías mejorarlo con una animación sutil. @done (2/11/2025, 5:24:21 PM)
+☐ Frases destacadas: Algo breve que refleje tu estilo o motivación como desarrollador.
+☐ Un pequeño widget dinámico: Puede ser una cita sobre tecnología, el clima de tu ciudad o el número de proyectos que has completado.
+☐ Reducir los bordes de las tarjetas para que se vean más modernas.
+☐ Usar una sombra sutil (box-shadow) para dar un efecto de elevación a cada tarjeta.
+☐  Añadir más espaciado entre los proyectos, evitando que se vean demasiado juntos.
+✔ Alinear los iconos de tecnologías para que estén uniformes en cada tarjeta. @done (2/11/2025, 5:26:56 PM)
+☐ Incluir una imagen previa del proyecto dentro de la tarjeta para que el usuario tenga una mejor referencia visual.
+☐ Agregar una breve lista de funcionalidades clave en cada descripción para destacar lo más importante.
+✔ Destacar el stack tecnológico con un fondo más notorio o etiquetas (badges). @done (2/11/2025, 5:27:14 PM)
+
+☐  Botón de vista previa más llamativo: Puedes cambiar su color o agregar un hover más dinámico.
+☐  Incluir un botón "Ver código" (GitHub) junto al de vista previa.
+☐  Hacer que las tarjetas sean clickeables en toda su área, no solo en el botón.
+☐  Optimizar el scroll: Si tienes muchos proyectos, podrías usar un filtro por tecnología o una pestaña de categorías.

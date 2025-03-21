@@ -1,0 +1,30 @@
+{
+  "name": "portfolio-cv-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.0.8",
+    "@astrojs/react": "^4.2.0",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.2.1",
+    "@nanostores/react": "^0.8.4",
+    "@tailwindcss/vite": "^4.0.2",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "astro": "^5.2.3",
+    "emailjs-com": "^3.2.0",
+    "nanostores": "^0.11.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16"
+  }
+}

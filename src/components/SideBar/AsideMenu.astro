@@ -1,0 +1,95 @@
+---
+import LibraryIcon from "@/icons/Library.astro";
+import SideMenuItems from "./SideMenuItems.astro";
+import Letter from "@/icons/Letter.astro";
+import Spotify from "@/icons/Spotify.astro";
+import ThemeToggleButton from "./ThemeToggleButton";
+import Twitter from "@/icons/Twitter.astro";
+import Github from "@/icons/GithubSide.astro";
+import Linkenld from "@/icons/Linkenld.astro";
+import CV from "@/icons/CV.astro";
+import SideLi from "@/components/SideBar/SideLi.astro";
+import SideMenuModal from "./SideMenuModal.astro";
+import IconsUtil from "../Utils/IconsUtils.astro";
+
+const person = import.meta.env.NOMBRE_USUARIO_PORTFOLIO;
+const alias = import.meta.env.ALIAS_USUARIO_PORTFOLIO;
+const role1 = import.meta.env.PRIMERA_CARACTERISTICA_PORTFOLIO;
+const role2 = import.meta.env.SEGUNDA_CARACTERISTICA_PORTFOLIO;
+const experience = import.meta.env.EXPERIENCIA_PORTFOLIO;
+const github = import.meta.env.GITHUB_USUARIO_PORTFOLIO;
+const linkedin = import.meta.env.LINKEDIN_USUARIO_PORTFOLIO;
+const spotify = import.meta.env.SPOTIFY_USUARIO_PORTFOLIO;
+const twitter = import.meta.env.TWITTER_USUARIO_PORTFOLIO;
+---
+
+<div
+  class="z-40 rounded-lg p-2 border-r-2 border-b-2 mx-0.5 border-border-light dark:border-border-dark"
+>
+  <div
+    class="flex flex-col items-center justify-center text-paragraph-light dark:text-paragraph-dark"
+  >
+    <ThemeToggleButton client:visible />
+    <div class="max-w-56 rounded-full overflow-hidden p-4 -mb-2">
+      <img
+        src="../images/avatar.png"
+        alt="avatar"
+        class="rounded-full border-2 mx-auto w-44 hover:scale-110 transition-all"
+      />
+    </div>
+
+    <h3
+      class="[text-shadow:_0_2px_2px_rgb(99_102_241_/_0.2)] hover:scale-105 duration-75 font-bold text-lg text-clip text-center"
+    >
+      {person}
+    </h3>
+    <span
+      class="[text-shadow:_0_3px_2px_rgb(99_102_241_/_0.6)] text-center text-sm font-semibold italic mb-2.5"
+      >{alias}</span
+    >
+    <ul class="flex flex-col w-full select-none">
+      <SideLi role={`${role1}`} />
+      <SideLi role={`${role2}`} />
+      <SideLi role={`${experience}`} />
+    </ul>
+  </div>
+</div>
+
+<div
+  class="flex flex-col justify-between rounded-lg p-2 border-r-2 border-t-2 border-border-light dark:border-border-dark mx-0.5 flex-1 mb-7 md:mb-4 overflow-auto"
+>
+  <nav>
+    <!-- Enlace de Inicio - Proyectos -->
+    <SideMenuItems href="/">
+      <LibraryIcon />
+      Proyectos
+    </SideMenuItems>
+
+    <!-- Enlace al CV -->
+    <SideMenuItems href="../Fabian-Fonseca-CV.pdf">
+      <CV />
+      <span>Mi CV</span>
+    </SideMenuItems>
+
+    <!-- Enlace de Contacto -->
+    <SideMenuItems href="/contact" transition:name="contact">
+      <Letter />
+      <span>Contacto</span>
+    </SideMenuItems>
+
+    <!-- Modal con información adicional -->
+    <SideMenuModal empresa="DigitelConect@" url="../Certificado1-FFF.pdf" />
+
+    <!-- Enlace a Spotify - último elemento -->
+    <SideMenuItems href={`${spotify}`}>
+      <Spotify />
+      Lista Favorita :3
+    </SideMenuItems>
+  </nav>
+
+  <footer class="flex items-center justify-center space-x-8 m-2 pb-8 md:pb-0">
+    <IconsUtil utils="Twitter"><Twitter url={`${twitter}`} /></IconsUtil>
+    <IconsUtil utils="Github"><Github url={`${github}`} /></IconsUtil>
+    <IconsUtil utils="Linkenld"><Linkenld url={`${linkedin}`} /></IconsUtil>
+  </footer>
+</div>

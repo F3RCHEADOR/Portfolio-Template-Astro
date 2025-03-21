@@ -1,0 +1,15 @@
+---
+interface Props {
+  utils: string;
+}
+
+const { utils } = Astro.props;
+---
+
+<div class="relative group">
+  <span
+    class="hidden group-hover:block z-10 transition-all absolute p-0.5 w-auto rounded-md -top-5 right-4 bg-main-light dark:bg-main-dark text-black dark:text-white text-nowrap translate-x-1/2  transform bg-opacity-30 text-xs italic "
+    >{utils}</span
+  >
+  <slot />
+</div>

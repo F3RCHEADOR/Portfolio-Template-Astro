@@ -1,0 +1,61 @@
+---
+import Download from "@/icons/Download.astro";
+interface Props {
+  empresa?: string;
+  url?: string;
+}
+const { empresa = "Empresa", url = "#" } = Astro.props;
+---
+
+<li class="list-none group w-full">
+  <!-- Botón para mostrar los trabajos -->
+  <button
+    onclick="toggleTrabajoMenu()"
+    class="flex w-full gap-4 pl-5 group-hover:pl-2 transform transition-all group-hover:bg-slate-100 dark:group-hover:bg-gray-800 text-paragraph-light dark:text-paragraph-dark items-center py-2.5 px-5 font-medium cursor-pointer"
+  >
+    <Download />
+    <p>Últimos trabajos</p>
+  </button>
+
+  <!-- Menú de trabajos (inicialmente oculto) -->
+  <div
+    id="trabajosMenu"
+    class="opacity-0 -translate-y-4 font-medium transition-all duration-300 ease-in-out"
+    style="display: none;"
+  >
+    <div
+      class="flex flex-col gap-4 pl-7 py-2.5 px-5 w-full group-hover:bg-slate-100 dark:group-hover:bg-gray-800"
+    >
+      <a
+        href={url}
+        class=" text-heading-alt-light dark:text-heading-alt-dark py-2 px-4 rounded w-full cursor-pointer border-x-2 border-border-dark dark:border-gray-600 hover:scale-x-105 transform transition-all font-semibold text-lg text-center"
+        >{empresa}</a
+      >
+    </div>
+  </div>
+</li>
+
+<script is:inline>
+  // Función para mostrar u ocultar el menú de trabajos
+  function toggleTrabajoMenu() {
+    const trabajosMenu = document.getElementById("trabajosMenu");
+
+    if (trabajosMenu) {
+      // Si está oculto, mostramos con animación
+      if (trabajosMenu.style.display === "none") {
+        trabajosMenu.style.display = "flex"; // Cambia a flex para mostrar
+        setTimeout(() => {
+          trabajosMenu.classList.remove("opacity-0", "-translate-y-4");
+          trabajosMenu.classList.add("opacity-100", "translate-y-0");
+        }, 10);
+      } else {
+        // Si está visible, lo ocultamos con animación
+        trabajosMenu.classList.add("opacity-0", "-translate-y-4");
+        trabajosMenu.classList.remove("opacity-100", "translate-y-0");
+        setTimeout(() => {
+          trabajosMenu.style.display = "none"; // Cambia a none para ocultar
+        }, 300); // Tiempo para que la animación termine antes de ocultarlo
+      }
+    }
+  }
+</script>

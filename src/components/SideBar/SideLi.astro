@@ -1,0 +1,20 @@
+---
+interface Props{
+  role: string
+}
+
+const {role = "Falta Rol"} = Astro.props;
+---
+
+<li
+class="p-1 group transform transition-all hover:bg-slate-100 dark:hover:bg-gray-800 w-full"
+>
+<div class="inline-flex group:hover:pr-4 items-center justify-start">
+  <button
+    class="w-10 h-8 group-hover:ml-2 ml-4 bg-button-main-light hover:opacity-80 rounded-md transition-all"
+  >
+    <span class="text-white text-xl font-bold">{role?.charAt(0)}</span>
+  </button>
+  <p class="mx-1 text-base font-medium">{role?.slice(1)}</p>
+</div>
+</li>

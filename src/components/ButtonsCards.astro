@@ -1,0 +1,50 @@
+---
+import Github from '@/icons/Github.astro';
+import LinkTo from '@/icons/LinkTo.astro';
+import IconsUtils from './Utils/IconsUtils.astro';
+import GoToUrl from '@/icons/GoToUrl.astro';
+
+
+interface Props {
+  id: string,
+  utilMD: string,
+  utilGit: string,
+  urlGithub?: string,
+  utilLink: string,
+  urlDeployed: string,
+  deployed : boolean
+}
+
+const { id = "" ,utilMD = "", utilGit = "", utilLink = "" ,urlDeployed = "", deployed = false, urlGithub = "#" } = Astro.props;
+---
+
+<div class="flex items-center justify-center">
+  {deployed && (
+    <a
+      href={`${urlDeployed}`} target="_blank"
+      class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-main-light border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all"
+    >
+      <IconsUtils utils={utilLink}>
+        <GoToUrl />
+      </IconsUtils>
+    </a>
+  )}
+  <a
+    href={`/project/${id}`}
+    class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-red-500 border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all"
+  >
+    <IconsUtils utils={utilMD}>
+      {" "}
+      <LinkTo />
+    </IconsUtils>
+  </a>
+  <a
+    href={`${urlGithub}`}
+    class="flex justify-center mx-auto h-12 w-16 rounded-md items-center bg-button-alt-light border-2 dark:bg-button-main-dark group hover:scale-y-105 transition-all"
+  >
+    <IconsUtils utils={utilGit}>
+      <Github url='#'/>
+    </IconsUtils>
+  </a>
+
+</div>

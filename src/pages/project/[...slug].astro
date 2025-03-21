@@ -1,0 +1,27 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+import { render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("project");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<BlogPost {...post.data}>
+  <div
+    transition:name={`${post.id}`}
+    class="max-w-4xl mt-7 mb-8 mx-auto px-3 prose prose-h1:text-center prose-headings:text-heading-main-light
+		dark:prose-headings:text-headingg-main-dark dark:prose-strong:text-gray-300 prose-p:text-paragraph-light dark:prose-p:text-paragraph-dark prose-li:text-paragraph-light dark:prose-li:text-paragraph-dark"
+    >
+    <Content />
+  </div>
+</BlogPost>

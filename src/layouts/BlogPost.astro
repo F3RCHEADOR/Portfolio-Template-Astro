@@ -1,0 +1,51 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import AsideMenu from "@/components/SideBar/AsideMenu.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
+import { ClientRouter } from "astro:transitions";
+import SideBarToggle from "@/components/SideBar/SideBarToggle.jsx"; //
+import Footer from "@/components/Footer.astro";
+---
+
+<html lang="es">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+  <body
+    class="relative w-full h-screen p-2 gap-2 bg-main-light dark:bg-main-dark transform transition-all overflow-hidden"
+  >
+    <!-- Barra lateral -->
+    <aside
+      id="SideBar"
+      class="z-40 fixed top-2 md:top-0 left-0 w-[85%] sm:w-80 h-full overflow-auto flex flex-col flex-1 gap-2 md:m-1 transform transition-all bg-main-light dark:bg-main-dark"
+    >
+      <AsideMenu
+        person="Fabian Fernando Fonseca Chacon"
+        alias="(T.F)"
+        role1="Ingeniero de Sistemas"
+        role2="Desarrollador FrontEnd"
+        experience={2}
+      />
+    </aside>
+
+    <!-- Contenido principal -->
+    <main
+      id="Main"
+      class="relative w-fulls rounded-lg overflow-y-auto z-10 transform transition-all h-full"
+    >
+    
+
+      <ClientRouter />
+      <SideBarToggle client:load transition:animate={"none"} />
+
+      <div id="screen" class="flex flex-col items-center justify-between max-w-screen-xl mx-auto ">
+        <slot />
+        <Footer />
+      </div>
+    </main>
+
+    
+    
+  </body>
+</html>
